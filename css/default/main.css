@@ -1,0 +1,92 @@
+/** @description:中粮奥运活动页面样式 @author:Shengzhi Cheung @mail:shengzhizhang@gmail.com */
+/* 导入拼图 */
+.telephone, .hotline .mobile { background: url(bgimg/ico_bg.png) no-repeat; }
+
+/* 文本排版 */
+body { color: #444444; }
+
+a { text-decoration: none; color: #238acc; }
+a:hover { text-decoration: underline; color: #185e8b; }
+
+/* 布局 */
+/* 头部 */
+#header { margin-bottom: 20px; }
+
+.head-top { height: 80px; }
+.head-top .logo { padding-top: 15px; }
+
+/* 头图 */
+.banner img { display: block; }
+
+/*主导航*/
+.nav { height: 39px; background: #3C3C3C; border-bottom: 1px solid #303030; }
+.nav ul { margin: 0; }
+.nav li { float: left; list-style: none; margin: 0; border-right: 1px solid #4B4B4B; }
+.nav li a { float: left; padding: 0 40px; color: #eee; font: 13px/39px "\5FAE\8F6F\96C5\9ED1", "\9ED1\4F53"; }
+.nav li a:hover { text-decoration: none; color: #57C2E6; }
+.nav .active a { background-color: #222; color: #57C2E6; }
+
+/*搜索栏*/
+.search-bar { margin: 0 10px; background: #F4F4F4; border: 1px solid #DEDEDE; padding: 4px 0; -webkit-border-radius: 0 0 2px 2px; -moz-border-radius: 0 0 2px 2px; border-radius: 0 0 2px 2px; clear: both; }
+
+/*搜索框*/
+.search-box { float: right; }
+.search-box input { border: 1px solid #CCC; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 4px; margin: 0; width: 140px; }
+.search-box button { margin: 0; }
+
+/*热门搜索*/
+.hot-keywords { overflow: hidden; line-height: 30px; color: #666666; }
+.hot-keywords strong { color: #e31010; }
+.hot-keywords a { white-space: nowrap; margin: 0 10px; color: #666666; }
+
+/* 尾部 */
+#footer { padding: 20px 0; background: #F2F2F2; border-top: 1px solid #DEDEDE; }
+
+.foot-links { float: right; color: #999999; }
+.foot-links a { margin: 0 10px; }
+
+.copyright p { margin-bottom: 5px; color: #666666; }
+
+/* 按钮 */
+/* Tab */
+/* 图标 */
+/* 浮层 */
+/* 公用模块样式 */
+.mod { margin-bottom: 20px; }
+.mod .hd { border-bottom: 2px solid #92DEF9; margin-bottom: 10px; }
+.mod .hd h3 { margin: 0; font: 16px/30px "\5FAE\8F6F\96C5\9ED1", "\9ED1\4F53"; }
+.mod .hd a { float: right; line-height: 30px; font-family: "\5B8B\4F53"; color: #999999; }
+
+.news-list li { position: relative; height: 24px; line-height: 24px; margin: 0; padding-left: 10px; overflow: hidden; }
+.news-list li i { position: absolute; left: 0; top: 7px; position: absolute; width: 0; height: 0; overflow: hidden; border-width: 4px; border-style: dashed dashed dashed solid; border-color: transparent transparent transparent #999999; }
+.news-list li span { margin-right: 20px; color: #999999; }
+.news-list li a { color: #444444; }
+
+/* 页面级别样式 */
+/* 首页 */
+.categories ul { margin: 0; }
+.categories li { list-style: none; border-bottom: 1px solid #ADE2F6; padding: 0; margin: 0; }
+.categories li a { display: block; padding-left: 20px; background: #5BC4EC; color: #333; font: 14px/30px "\5FAE\8F6F\96C5\9ED1", "\9ED1\4F53"; border-left: 6px solid #52B0D4; }
+.categories li a:hover { border-color: #54BDE1; background: #5ED3FB; text-decoration: none; }
+
+.hotline { height: 82px; margin-bottom: 20px; background: #bbeafb url(bgimg/hotline_bg.jpg) no-repeat right bottom; border: 1px solid #92DEF9; }
+.hotline p { color: #00658A; line-height: 24px; padding-left: 30px; margin: 10px 0 0 5px; font-size: 16px; }
+.hotline .telephone, .hotline .mobile { background-position: -8px 3px; }
+.hotline .mobile { background-position: -12px -33px; margin-top: 5px; }
+
+.tab-bar { height: 34px; padding: 3px 10px 0 10px; background: #F7F7F7; border-bottom: 1px solid #E5E5E5; _overflow: hidden; }
+.tab-bar .sort { position: relative; height: 40px; overflow: hidden; z-index: 100; }
+.tab-bar .sort span { position: relative; float: left; padding: 0 6px 0 5px; margin: 0 0 0 -1px; white-space: nowrap; }
+.tab-bar .sort span em, .tab-bar .sort span a { display: inline-block; height: 35px; padding: 0 14px; -webkit-border-radius: 3px 3px 0 0; -moz-border-radius: 3px 3px 0 0; border-radius: 3px 3px 0 0; color: #3D3D3D; font: 16px/35px "Microsoft Yahei"; }
+.tab-bar .sort span i { display: none; left: 50%; top: 35px; margin-left: -5px; position: absolute; width: 0; height: 0; overflow: hidden; border-width: 5px; border-style: solid dashed dashed; border-color: #5ed3fb transparent transparent; }
+.tab-bar .sort .cur em { background: #5ED3FB; color: #FFF; text-decoration: none; }
+.tab-bar .sort .cur i { display: block; }
+.tab-bar .more { float: right; margin-top: 8px; font-family: "\5B8B\4F53"; color: #999; }
+
+.product-list { margin: 20px -10px 30px; }
+.product-list li { position: relative; }
+.product-list li a:hover { text-decoration: none; }
+.product-list li em { position: absolute; width: 160px; left: 0; bottom: 0; font-style: normal; z-index: 1; text-align: center; color: #fff; line-height: 24px; cursor: pointer; }
+.product-list li .mask { position: absolute; left: 0; bottom: 0; width: 160px; height: 24px; z-index: -1; background: #000; opacity: 0.5; filter: alpha(opacity=50); }
+
+.mod-profile p { line-height: 24px; margin-bottom: 10px; text-indent: 2em; }

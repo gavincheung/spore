@@ -1,0 +1,38 @@
+@charset "UTF-8";
+// Links
+$linkColor: #238ACC !default;
+$linkColorHover: darken($linkColor, 15) !default;
+
+// Grays
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #444 !default;
+$gray:                  #666 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$white:                 #fff !default;
+
+$pageBackground:	#00B0EC !default;
+
+// Accent colors
+$blue:                  #049cdb !default;
+$blueDark:              #0064cd !default;
+$green:                 #46a546 !default;
+$red:                   #9d261d !default;
+$yellow:                #ffc40d !default;
+$orange:                #f89406 !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+
+// Typegraphy
+$baseFontSize: 12px !default;
+$baseFontFamily: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif !default;
+$baseLineHeight: 18px !default;
+$textColor: $grayDark !default;
+
+// Buttons
+$primaryButtonBackground:    $linkColor !default;
+
+// Sprite icons path
+$iconSpritePath:          "img/glyphicons-halflings.png";
+$iconWhiteSpritePath:     "img/glyphicons-halflings-white.png";

@@ -3,7 +3,7 @@
  * Controller is the customized base controller class.
  * All controller classes for this application should extend from this base class.
  */
-class Controller extends CController
+class Controller extends SBaseController
 {
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
@@ -20,4 +20,18 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+	/**
+	 * 初始化方法(用来解除 srbac.css)
+	 */
+	public function beforeAction($action)
+	{
+	    parent::beforeAction($action);
+	 	
+	 	// 解除因继承SBaseController而导致srbac引入的问题
+	    Yii::app()->clientscript->scriptMap['srbac.css'] = false;
+	 
+	    return true;
+	}
+
 }

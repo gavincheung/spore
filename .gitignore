@@ -162,6 +162,7 @@ pip-log.txt
 # Mac crap
 .DS_Store
 
+
 ##################
 ## Project Folders
 ##################
@@ -170,11 +171,12 @@ pip-log.txt
 /assets
 
 #Runtime folder
+runtime/
 *.log
 
 #SASS cache folder
 .sass-cache/
 
 #Sublime
-spore.sublime-project
-spore.sublime-workspace
+jiqiao.sublime-project
+jiqiao.sublime-workspace

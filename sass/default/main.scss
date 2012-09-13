@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/**
+ * @description:前端页面样式
+ * @author:Shengzhi Cheung
+ * @mail:shengzhizhang@gmail.com
+ */
+
+// 变量与混入
+@import "variables";
+@import "mixins";
+
+/* 导入拼图 */
+.telephone { background:url(bgimg/ico_bg.png) no-repeat; }
+
+/* 文本排版 */
+body { color:$textColor; }
+a { 
+	text-decoration:none; color:$linkColor; 
+
+	&:hover { text-decoration:underline; color:$linkColorHover; }
+}
+
+/* 布局 */
+
+	/* 头部 */	
+	#header { margin-bottom:20px; }
+	.head-top { 
+		height:80px; 
+
+		.logo { padding-top:15px; }
+	}
+	/* 头图 */
+	.banner {
+		img { display:block; }
+	}
+
+	/*主导航*/
+	.nav {
+		height:39px; background:#3C3C3C; border-bottom:1px solid #303030;  
+
+		ul { margin:0; }
+
+		li {
+			float:left; list-style:none; margin:0; border-right:1px solid #4B4B4B; 
+
+			a { 
+				float:left; padding:0 40px; color:#eee; font:13px/39px "\5FAE\8F6F\96C5\9ED1", "\9ED1\4F53"; 
+
+				&:hover { text-decoration:none; color:#57C2E6; }
+			}
+		}
+
+		.active {
+			a { background-color:#222; color:#57C2E6; }
+		}
+	}
+
+	/*搜索栏*/
+	.search-bar { margin:0 10px; background:#F4F4F4; border:1px solid #DEDEDE; padding:4px 0; @include border-radius(0 0 2px 2px); clear:both; }
+
+	/*搜索框*/
+	.search-box { 
+		float:right; 
+
+		input { border:1px solid #CCC; @include border-radius(3px); padding:4px; margin:0; width:140px; }
+
+		button { margin:0; }
+	}
+	
+	/*热门搜索*/
+	.hot-keywords { 
+		overflow:hidden; line-height:30px; color:$gray; 
+
+		strong { color:#e31010; }
+
+		a { white-space:nowrap; margin:0 10px; color:$gray; }
+	}
+
+	/* 尾部 */
+	#footer { padding:20px 0; background:#F2F2F2; border-top:1px solid #DEDEDE; }
+
+	.foot-links {
+		float:right; color:$grayLight; 
+
+		a { margin:0 10px; }
+	}
+
+	.copyright {
+		p { margin-bottom:5px; color:$gray; }
+	}
+
+
+/* 按钮 */
+
+/* Tab */
+
+/* 图标 */
+
+
+/* 浮层 */
+
+/* 公用模块样式 */
+// ---------------------------------------------------------------------
+// 模块
+.mod {
+	margin-bottom:20px; 
+	.hd {
+		border-bottom:2px solid #92DEF9; margin-bottom:10px;  
+
+		h3 { margin:0; font:16px/30px "\5FAE\8F6F\96C5\9ED1", "\9ED1\4F53"; }
+
+		a { float:right; line-height:30px; font-family:"\5B8B\4F53"; color:$grayLight; }
+	}
+}
+
+// 新闻列表
+.news-list {
+	li { 
+		position:relative; height:24px; line-height:24px; margin:0; padding-left:10px; overflow:hidden; 
+
+		i { position:absolute; left:0; top:7px; @include border-arrow($grayLight, 4px, "right"); }
+
+		span { margin-right:20px; color:$grayLight; }
+
+		a { color:$grayDark; }
+	}
+}
+
+
+
+/* 页面级别样式 */
+// ---------------------------------------------------------------------
+
+/* 首页 */
+// ----------------------------------
+// 产品分类
+.categories {
+
+	ul { margin:0; }
+
+	li {
+		list-style:none; border-bottom:1px solid #ADE2F6; padding:0; margin:0;
+
+		a { 
+			display:block; padding-left:20px; background:#5BC4EC; color:#333; font:14px/30px "\5FAE\8F6F\96C5\9ED1", "\9ED1\4F53"; border-left:6px solid #52B0D4;
+
+			&:hover { border-color:#54BDE1; background:#5ED3FB; text-decoration:none; }
+		}
+	}
+
+}
+
+// 热线电话
+.hotline { 
+	height:82px; margin-bottom:20px; background:#BBEAFB url(bgimg/hotline_bg.jpg) no-repeat right bottom; border:1px solid #92DEF9; 
+
+	p { color:#00658A; line-height:24px; padding-left:30px; margin:10px 0 0 5px; font-size:16px; }
+
+	.telephone { background-position:-8px 3px; }
+	.mobile { @extend .telephone; background-position:-12px -33px; margin-top:5px; }
+}
+
+// 技术文档
+
+// 常见问题
+
+// 推荐产品
+	.tab-bar {
+		height:34px; padding:3px 10px 0 10px; background:#F7F7F7; border-bottom:1px solid #E5E5E5; _overflow:hidden;
+
+		.sort {
+			position:relative; height:40px; overflow:hidden; z-index:100;
+
+			span {
+				position:relative; float:left; padding:0 6px 0 5px; margin:0 0 0 -1px; white-space:nowrap;
+
+				em,
+				a { display:inline-block; height:35px; padding:0 14px; @include border-radius(3px 3px 0 0); color:#3D3D3D; font:16px/35px "Microsoft Yahei"; }
+				i {
+					display:none; left:50%; top:35px; margin-left:-5px;
+					@include border-arrow(#5ED3FB, 5px, "down");
+				}//i
+			}//span
+			.cur {
+				em { background:#5ED3FB; color:#FFF; text-decoration:none; }
+
+				i { display:block; }
+			}//.cur
+		}//.sort
+		.more { float:right; margin-top:8px; font-family:"\5B8B\4F53"; color:#999; }
+	}//.tab-bar
+
+	.product-list {
+		margin:20px -10px 30px; 
+
+		li { 
+			position:relative; 
+
+			a { 
+				&:hover { text-decoration:none; }
+			}
+
+			em { position:absolute; width:160px; left:0; bottom:0; font-style:normal; z-index:1; text-align:center; color:#fff; line-height:24px; cursor:pointer; }
+
+			.mask { position:absolute; left:0; bottom:0; width:160px; height:24px; z-index:-1; background:#000; @include opacity(50); }
+		}
+	}
+
+// 行业资讯
+
+// 业界周边
+
+// 企业概况
+.mod-profile {
+	p { line-height:24px; margin-bottom:10px; text-indent:2em; }
+}

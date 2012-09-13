@@ -1,59 +1,59 @@
-<?php /* @var $this Controller */ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 960 CSS framework -->
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/960/reset.css">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/960/text.css">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/960/960.css">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/default/main.css">
 </head>
-
 <body>
+	<div id="header" class="container_16">
+		<div class="grid_16 head-top">
+			<h1 class="logo"><a href="#"><img src="../images/logo.png" alt="冀桥建材有限公司"/></a></h1>
+			<!-- /logo -->
+		</div>
 
-<div class="container" id="page">
+		<div class="grid_16 banner"><img src="http://placehold.it/940x220/cccccc/e3e3e3" alt="冀桥建材有限公司" /></div>
+		<!-- /头图 -->
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+		<div class="grid_16 nav">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li class="active"><a href="#">企业简介</a></li>
+				<li><a href="#">产品中心</a></li>
+				<li><a href="#">新闻资讯</a></li>
+				<li><a href="#">井盖技术</a></li>
+				<li><a href="#">常见问题</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+		<!-- /主导航 -->
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+		<div class="search-bar clearfix">
+			<div class="grid_4 omega search-box">
+				<input type="text"><button class="btn" type="submit"><i class="icon-search"></i> Search</button>
+			</div>
+			<!-- /搜索框 -->
+
+			<div class="grid_11 hot-keywords">
+				<strong>热门搜索：</strong><a href="#">井盖</a>|<a href="#">铸造井盖</a>|<a href="#">铸铁井盖</a>|<a href="#">市政井盖</a>|<a href="#">雨水井盖</a>|<a href="#">热力井盖</a>|<a href="#">自来水井</a>
+			</div>
+		</div>
+	</div>
 
 	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
+	
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
-
+		<div class="container_16 clearfix">
+			<div class="foot-links grid_7"><a href="#">首页</a>|<a href="#">企业简介</a>|<a href="#">产品中心</a>|<a href="#">业界新闻</a>|<a href="#">常见问题</a>|<a href="#">联系我们</a></div>
+			<div class="copyright grid_9">
+				<p>Copyright &copy; 2011 东莞市冀桥建材有限公司 版权所有 网站备案号：粤ICP备10078293号</p>
+				<p>厂址：东莞市大岭山镇 电话：0769-23661007</p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

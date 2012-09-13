@@ -1,53 +1,50 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title><?php echo Yii::app()->name . ' - Login'; ?></title>
+	<style type="text/css">
+	.form { position:absolute; left:50%; top:50%; width:430px; margin:-190px 0 0 -230px; }
+	.form h1 { margin-bottom:20px; }
+	.form .required span { display:none; }
+	.form input { padding:8px; }
+	.form .form-actions { border-top:0; padding:0; }
+	</style>
+</head>
+<body>
 
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
+	<div class="form">
 
-<h1>Login</h1>
+	<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm',array(
+		'id'=>'login-form',
+		'enableClientValidation'=>true,
+		'clientOptions'=>array(
+			'validateOnSubmit'=>true,
+		),
+		'htmlOptions'=>array(
+			'class'=>'well',
+		),
+	)); ?>
 
-<p>Please fill out the following form with your login credentials:</p>
+		<h1>Login</h1>
 
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
+		<?php echo $form->textFieldRow($model,'username',array('class'=>'span5','maxlength'=>256)); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+		<?php echo $form->passwordFieldRow($model,'password',array('class'=>'span5','maxlength'=>256)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
+		<?php echo $form->checkBoxRow($model, 'rememberMe'); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
+		<div class="form-actions">
+			<?php $this->widget('bootstrap.widgets.BootButton', array(
+				'buttonType'=>'submit',
+				'type'=>'primary',
+				'size'=>'large',
+				'label'=>'Login',
+			)); ?>
+		</div>
 
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
+	<?php $this->endWidget(); ?>
+	</div><!-- form -->
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+</body>
+</html>

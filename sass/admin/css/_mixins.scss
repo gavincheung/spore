@@ -1,0 +1,228 @@
+@charset "UTF-8";
+// Clearfix
+// --------
+// For clearing floats
+// Usage:
+// 		.group {
+//     		@include clearfix();
+// 		}
+@mixin clearfix() {
+	// For IE 6/7 (trigger hasLayout)
+	*zoom:1;
+
+	// For modern browsers
+	&:before,
+	&:after {
+		display:table;
+		content:"";
+	}
+	&:after {
+		clear:both;
+	}
+}
+
+// Webkit-style focus
+// ------------------
+@mixin tab-focus() {
+	// Default
+	outline: thin dotted $grayDark;
+	// Webkit
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+
+// IE7 inline-block
+// ----------------
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+// IE7 likes to collapse whitespace on either side of the inline-block elements.
+// Ems because we're attempting to match the width of a space character. Left
+// version is for form buttons, which typically come after other elements, and
+// right version is for icons, which come before. Applying both is ok, but it will
+// mean that space between those elements will be .6em (~2 space characters) in IE7,
+// instead of the 1 space in other browsers.
+@mixin ie7-restore-left-whitespace() {
+	*margin-left: .3em;
+
+	&:first-child {
+		*margin-left: 0;
+	}
+}
+
+@mixin ie7-restore-right-whitespace() {
+	*margin-right: .3em;
+
+	&:last-child {
+		*margin-left: 0;
+	}
+}
+
+// Backgrounds
+@mixin background($url, $repeat, $x: 0, $y: 0) {
+	background-image:url($url); 
+	background-repeat:$repeat;
+	background-position:$x $y; 
+}
+
+// 过长文字显示省略号
+@mixin text-overflow($width: 100%) {
+	width:$width; 
+	overflow:hidden; 
+	word-wrap:normal; 
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+}
+
+// 隐藏文字
+@mixin hide-text {
+	overflow:hidden; 
+	text-indent:-9999px; 
+}
+
+// border箭头
+// $color 箭头颜色
+// $width 箭头宽度
+// $direction 箭头方向
+@mixin border-arrow($color:#666, $width:10px, $direction:"down"){
+	position:absolute; width:0; height:0; overflow:hidden; border-width:$width;
+	
+	@if $direction == "up" {
+		border-style:dashed dashed solid;
+		border-color:transparent transparent $color;
+	}
+	@else if $direction == "left" {
+	    border-style:dashed solid dashed dashed;
+	    border-color:transparent $color transparent transparent;
+	}
+	@else if $direction == "right" {
+	    border-style:dashed dashed dashed solid;
+	    border-color:transparent transparent transparent $color;
+	}
+	@else {
+	    border-style:solid dashed dashed;
+	    border-color:$color transparent transparent;
+	}
+}
+
+// FONTS
+// --------------------------------------------------
+@mixin font-family-sans-serif {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $lineHeight;
+}
+@mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+	@include font-family-sans-serif;
+	@include font-shorthand($size, $weight, $lineHeight);
+}
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border radius
+@mixin border-radius($radius: 5px) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	        border-radius: $radius;
+}
+
+// Drop box shadows
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	   -moz-box-shadow: $shadow;
+	        box-shadow: $shadow;
+}
+
+// Drop text shadows
+@mixin text-shadow($shadow: 0 1px 0 rgba(0, 0, 0, .5)) {
+	-webkit-text-shadow: $shadow;
+	   -moz-text-shadow: $shadow;
+	        text-shadow: $shadow;
+}
+
+// Transitions
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+// Create a shadow box
+@mixin box {
+	background-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ECECEC #DFDFDF #CDCDCD;
+	@include border-radius;
+	@include box-shadow(0 1px 4px 0 rgba(0, 0, 0, .1));
+}
+
+// Opacity
+@mixin opacity($opacity: 100) {
+  opacity: $opacity / 100;
+   filter: alpha(opacity=$opacity);
+}
+
+// Gradients
+@mixin gradient-horizontal($startColor: #555, $endColor: #333) {
+	background-color: $endColor;
+	background-image: -moz-linear-gradient(left, $startColor, $endColor); // FF 3.6+
+	background-image: -ms-linear-gradient(left, $startColor, $endColor); // IE10
+	background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(left, $startColor, $endColor); // Opera 11.10
+	background-image: linear-gradient(left, $startColor, $endColor); // Le standard
+	background-repeat: repeat-x;
+	//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1), $startColor, $endColor; // IE9 and down
+}
+@mixin gradient-vertical($startColor: #555, $endColor: #333) {
+	background-color: $endColor;
+	background-image: -moz-linear-gradient(top, $startColor, $endColor); // FF 3.6+
+	background-image: -ms-linear-gradient(top, $startColor, $endColor); // IE10
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
+	background-image: linear-gradient(top, $startColor, $endColor); // The standard
+	background-repeat: repeat-x;
+	//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0),$startColor,$endColor; // IE9 and down
+}
+
+// Gradient Bar Colors for buttons and alerts
+@mixin gradientBar($primaryColor, $secondaryColor) {
+	@include gradient-vertical($primaryColor, $secondaryColor);
+	border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
+	border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
+}
+
+// Reset filters for IE
+@mixin reset-filter() {
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+// Mixin for generating button backgrounds
+// ---------------------------------------
+@mixin buttonBackground($startColor, $endColor) {
+	// gradientBar will set the background to a pleasing blend of these, to support IE<=9
+	@include gradientBar($startColor, $endColor);
+	@include reset-filter();
+
+	// in these cases the gradient won't cover the background, so we override
+	&:hover, &:active, &.active, &.disabled, &[disabled] {
+		background-color: $endColor;
+	}
+
+	// IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+	&:active,
+	&.active {
+		background-color: darken($endColor, 10%) #{"\9"};
+	}
+}

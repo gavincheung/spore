@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/jiqiao/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/jiqiao/css/bootstrap/bootstrap-yii.css">
+	<title>控制中心</title>
+	<link rel="stylesheet" type="text/css" href="/jiqiao/themes/admin/css/main.css">
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="#" class="brand">控制中心</a>
+				<ul id="main-nav" class="nav">
+					<li class="active"><a href="#"><i class="icon-list-alt icon-white"></i> 内容管理</a></li>
+					<li class=""><a href="#"><i class="icon-wrench icon-white"></i> 网站设置</a></li>
+					<li class=""><a href="#"><i class="icon-user icon-white"></i> 用户管理</a></li>
+					<li class=""><a href="#"><i class="icon-cog icon-white"></i> 我的账户(admin)</a></li>
+				</ul>
+				<ul class="pull-right nav">
+					<li class=""><a href="/jiqiao/admin.php/site/logout"><i class="icon-off icon-white"></i> 登出</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="aside" class="frame-aside">
+		<div id="nav" class="nav-aside">
+			<ul id="yw0">
+				<li class="active"><a target="mask" href="/jiqiao/admin.php/site/dashboard">信息面板</a></li>
+				<li><a target="mask" href="/jiqiao/admin.php/home">首页</a></li>
+				<li><a target="mask" href="/jiqiao/admin.php/post">文章</a></li>
+				<li><a target="mask" href="/jiqiao/admin.php/post">产品</a></li>
+				<li><a target="mask" href="/jiqiao/admin.php/category">分类</a></li>
+			</ul>
+			<ul class="hidden" id="yw1">
+				<li><a target="mask" href="/jiqiao/admin.php/post">前台</a></li>
+				<li><a target="mask" href="/jiqiao/admin.php/site/dashboard">后台</a></li>
+			</ul>
+			<ul class="hidden" id="yw2">
+				<li><a target="mask" href="/jiqiao/admin.php/user">用户</a></li>
+				<li><a target="mask" href="/jiqiao/admin.php/srbac/authitem/manage">权限控制</a></li>
+			</ul>
+			<ul class="hidden" id="yw3">
+				<li><a target="mask" href="/jiqiao/admin.php/resetPassword">重置密码</a></li>
+			</ul>
+		</div>
+		<!-- /nav -->
+	</div>
+
+	<div id="contents" class="frame-contents">
+		<iframe src="components.html" frameborder="0" width="100%" id="mask" name="mask" scrolling="yes"></iframe>
+	</div>
+
+</body>
+</html>
